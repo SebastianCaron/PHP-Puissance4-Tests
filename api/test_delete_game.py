@@ -113,7 +113,7 @@ def test_delete_games(base_url, game_path):
         print("[DELETE GAME] FAIL!")
 
 if __name__ == "__main__":
-    print(GLOBAL_BASE)
-    print(GLOBAL_GAME)
-    print(GLOBAL_BASE + GLOBAL_GAME + "delete_game.php")
-    test_delete_games(GLOBAL_BASE, GLOBAL_GAME)
+    print(BASE_URL)
+    print(GAME_PATH)
+    print(BASE_URL + GAME_PATH + "delete_game.php")
+    test_delete_games(BASE_URL, GAME_PATH)

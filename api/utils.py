@@ -1,7 +1,7 @@
 import requests
 
-GLOBAL_BASE = "http://172.31.143.240/"
-GLOBAL_GAME = "~sebastian_caron/api/"
+from config import *
+
 DEBUG = False
 
 def create_valide_game(base_url, game_path) -> int:

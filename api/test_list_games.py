@@ -169,7 +169,7 @@ def test_list_games(base_url, game_path):
 
 
 if __name__ == "__main__":
-    print(GLOBAL_BASE)
-    print(GLOBAL_GAME)
-    print(GLOBAL_BASE + GLOBAL_GAME + "list_games.php")
-    test_list_games(GLOBAL_BASE, GLOBAL_GAME)
+    print(BASE_URL)
+    print(GAME_PATH)
+    print(BASE_URL + GAME_PATH + "list_games.php")
+    test_list_games(BASE_URL, GAME_PATH)

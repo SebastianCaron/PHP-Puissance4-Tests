@@ -191,7 +191,7 @@ def test_get_games(base_url, game_path):
         print("[GET GAME] FAIL!")
 
 if __name__ == "__main__":
-    print(GLOBAL_BASE)
-    print(GLOBAL_GAME)
-    print(GLOBAL_BASE + GLOBAL_GAME + "get_game.php")
-    test_get_games(GLOBAL_BASE, GLOBAL_GAME)
+    print(BASE_URL)
+    print(GAME_PATH)
+    print(BASE_URL + GAME_PATH + "get_game.php")
+    test_get_games(BASE_URL, GAME_PATH)

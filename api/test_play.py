@@ -269,7 +269,7 @@ def test_play(base_url, game_path):
 
 
 if __name__ == "__main__":
-    print(GLOBAL_BASE)
-    print(GLOBAL_GAME)
-    print(GLOBAL_BASE + GLOBAL_GAME + "play.php")
-    test_play(GLOBAL_BASE, GLOBAL_GAME)
+    print(BASE_URL)
+    print(GAME_PATH)
+    print(BASE_URL + GAME_PATH + "play.php")
+    test_play(BASE_URL, GAME_PATH)
