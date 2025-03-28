@@ -8,7 +8,7 @@ def test_get_game_1(base_url, game_path, game_id) -> bool:
     url = base_url + game_path + "get_game.php"
     data = {"game_id": game_id, "game_path" : game_path, "player" : 2}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -41,7 +41,7 @@ def test_get_game_1(base_url, game_path, game_id) -> bool:
         if d[i] != expected_values[i]:
             print(f'{i} différent : {d[i]} != {expected_values[i]}')
             return False
-        
+    
     if("last_move" not in d):
         print(d)
         print("[ERREUR] LAST_MOVE Absent !")
@@ -55,7 +55,7 @@ def test_get_game_6(base_url, game_path, game_id) -> bool:
     url = base_url + game_path + "get_game.php"
     data = {"game_id": game_id, "game_path" : game_path, "player" : 1}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -92,7 +92,7 @@ def test_get_game_6(base_url, game_path, game_id) -> bool:
         print(d)
         print("[ERREUR] private_key non générée !")
         return False
-    
+
     if("last_move" not in d):
         print(d)
         print("[ERREUR] LAST_MOVE Absent !")
@@ -106,7 +106,7 @@ def test_get_game_2(base_url, game_path, game_id) -> bool:
     url = base_url + game_path + "get_game.php"
     data = {"game_id": -2, "game_path" : game_path, "player" : 2}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -145,7 +145,7 @@ def test_get_game_4(base_url, game_path, game_id) -> bool:
     url = base_url + game_path + "get_game.php"
     data = {"game_path" : game_path, "player" : 2}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -165,7 +165,7 @@ def test_get_game_5(base_url, game_path, game_id) -> bool:
     url = base_url + game_path + "get_game.php"
     data = {"game_id": game_id, "game_path" : game_path, "player" : 6}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)

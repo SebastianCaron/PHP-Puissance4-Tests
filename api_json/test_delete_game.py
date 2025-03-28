@@ -8,7 +8,7 @@ def test_delete_game_1(base_url, game_path, game_id) -> bool:
     url = base_url + game_path + "delete_game.php"
     data = {"game_id": game_id, "game_path" : game_path}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
     d = response.json()
 
     if(DEBUG):
@@ -27,11 +27,10 @@ def test_delete_game_2(base_url, game_path, game_id) -> bool:
     data = {"game_id": game_id, "game_path" : game_path}
 
     response = requests.get(url)
+    d = response.json()
 
     if(DEBUG):
-        print(response.text)
-        
-    d = response.json()
+        print(d)
 
     if(d["error"] == 0):
         print("[ERREUR] Aucune erreur détectée alors qu'on a pas utilisé POST !")
@@ -65,7 +64,7 @@ def test_delete_game_4(base_url, game_path) -> bool:
     url = base_url + game_path + "delete_game.php"
     data = {"game_path" : game_path}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -85,7 +84,7 @@ def test_delete_game_5(base_url, game_path, game_id) -> bool:
     url = base_url + game_path + "delete_game.php"
     data = {"game_id": -5, "game_path" : game_path}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)

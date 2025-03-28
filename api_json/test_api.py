@@ -33,3 +33,5 @@ if __name__ == "__main__":
 
     if(l == l2):
         print("TAILLE CONSERVEE DURANT LES TESTS !")
+    
+    

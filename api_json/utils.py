@@ -14,7 +14,7 @@ def create_valide_game(base_url, game_path) -> int:
         "player2_role": "",
         "player2_path": ""
     }
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -32,7 +32,7 @@ def delete_game(base_url, game_path, game_id) -> bool:
     url = base_url + game_path + "delete_game.php"
     data = {"game_id": game_id, "game_path" : game_path}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -55,7 +55,7 @@ def join_game(base_url, game_path, game_id) -> bool:
         "player2_role": "human",
         "player2_path": game_path
     }
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -74,7 +74,7 @@ def get_game(base_url, game_path, game_id, player=0) -> dict:
     url = base_url + game_path + "get_game.php"
     data = {"game_id": game_id, "game_path" : game_path, "player" : player}
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
@@ -94,7 +94,7 @@ def list_all_games(base_url, game_path):
         "path": game_path
     }
 
-    response = requests.post(url, data=data)
+    response = requests.post(url, json=data)
 
     if(DEBUG):
         print(response.text)
